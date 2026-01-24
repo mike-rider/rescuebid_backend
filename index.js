@@ -31,6 +31,6 @@ app.post("/publish", (req, res) => {
   res.json({ auctionId: "demo-" + Date.now() });
 });
 
-app.listen(3000, () => {
-  console.log("RescueBid backend running on port 3000");
+app.listen(process.env.PORT || 3000, () => {
+  console.log("RescueBid backend running");
 });
