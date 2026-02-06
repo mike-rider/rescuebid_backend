@@ -1,13 +1,12 @@
 import express from "express";
 import cors from "cors";
 
-app.get("/debug", (req, res) => {
-  res.send("index.js is running");
-});
-
 const app = express();
 app.use(cors());
 app.use(express.json());
+app.get("/debug", (req, res) => {
+  res.send("index.js is running");
+});
 
 // Mock Explore Collections data
 app.get("/collections", (req, res) => {
