@@ -39,6 +39,10 @@ app.post("/publish", (req, res) => {
 // AI listing generation mock endpoint
 app.post("/api/generate-listing", async (req, res) => {
   try {
+    // Accept the body your Swift code sends
+    console.log("Received image URLs:", req.body.imageUrls);
+
+    // Temporary mock response so your app works
     res.json({
       title: "Sample Listing",
       description: "This is a generated description.",
