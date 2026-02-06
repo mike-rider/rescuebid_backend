@@ -4,6 +4,8 @@ import cors from "cors";
 const app = express();
 app.use(cors());
 app.use(express.json());
+
+// Debug route to confirm the server is running the correct file
 app.get("/debug", (req, res) => {
   res.send("index.js is running");
 });
@@ -34,9 +36,9 @@ app.post("/publish", (req, res) => {
   res.json({ auctionId: "demo-" + Date.now() });
 });
 
+// AI listing generation mock endpoint
 app.post("/api/generate-listing", async (req, res) => {
   try {
-    // Temporary mock response so your app works
     res.json({
       title: "Sample Listing",
       description: "This is a generated description.",
