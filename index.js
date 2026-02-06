@@ -31,6 +31,25 @@ app.post("/publish", (req, res) => {
   res.json({ auctionId: "demo-" + Date.now() });
 });
 
+app.post("/api/generate-listing", async (req, res) => {
+  try {
+    // Temporary mock response so your app works
+    res.json({
+      title: "Sample Listing",
+      description: "This is a generated description.",
+      heroImageUrl: "https://picsum.photos/500",
+      notableItems: ["Item 1", "Item 2", "Item 3"],
+      galleryImageUrls: [
+        "https://picsum.photos/501",
+        "https://picsum.photos/502"
+      ]
+    });
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({ error: "Failed to generate listing" });
+  }
+});
+
 app.listen(process.env.PORT || 3000, () => {
   console.log("RescueBid backend running");
 });
