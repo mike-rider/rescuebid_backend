@@ -59,6 +59,16 @@ app.post("/api/generate-listing", async (req, res) => {
   }
 });
 
+app.post("/api/upload-photos", (req, res) => {
+  res.json({
+    imageUrls: [
+      "https://picsum.photos/600",
+      "https://picsum.photos/601",
+      "https://picsum.photos/602"
+    ]
+  });
+});
+
 app.listen(process.env.PORT || 3000, () => {
   console.log("RescueBid backend running");
 });
